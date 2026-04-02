@@ -1,6 +1,5 @@
 # Kubernetes Complete Learning Path
-
-	A structured, hands-on roadmap to learn Kubernetes from **fundamentals to production-level skills**.
+ - A structured, hands-on roadmap to learn Kubernetes from **fundamentals to production-level skills**.
 
 ---
 
