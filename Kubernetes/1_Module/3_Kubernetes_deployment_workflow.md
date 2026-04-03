@@ -1,11 +1,10 @@
 ### Deployment workflow
 ---
 ### Step 1: Write the deployment.yaml
-
-	- You define the desired state in deployment.yaml file
-	- Number of pods (replicas)
-	- Container image (nginx:latest)
-	- Ports, labels, environment variables, volumes, etc.
+ - You define the desired state in deployment.yaml file
+ - Number of pods (replicas)
+ - Container image (nginx:latest)
+ - Ports, labels, environment variables, volumes, etc.
 
 
 ### Step 2: Apply the deployment
