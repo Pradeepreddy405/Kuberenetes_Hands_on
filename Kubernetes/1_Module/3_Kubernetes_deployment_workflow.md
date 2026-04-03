@@ -11,9 +11,9 @@
  - Command: kubectl apply -f deployment.yaml
 
  - What happens:
-		- kubectl sends the Deployment manifest to the API Server.
-		- API Server validates, parses, and stores it in etcd (the cluster’s key-value store).
-		- Declarative approach: You only tell Kubernetes what you want, not how to do it.
+ - kubectl sends the Deployment manifest to the API Server.
+ - API Server validates, parses, and stores it in etcd (the cluster’s key-value store).
+ - Declarative approach: You only tell Kubernetes what you want, not how to do it.
 		
 	Components involved: kubectl → API Server → etcd.
 
