@@ -75,8 +75,11 @@ Kubernetes constantly reconciles:
 	  #### Components involved: Deployment Controller, ReplicaSet Controller, API Server, Scheduler, Kubelet.
 ---
 ### Summary :
+
  - Deployment → ReplicaSet → Pods is the control hierarchy.
  - Controllers (Deployment, ReplicaSet) live in the Controller Manager on control plane nodes.
  - Scheduler assigns pods to nodes.
  - Kubelet + container runtime actually runs containers.
  - API Server is the central hub — every controller talks to it, never directly to etcd.
+
+ ## You (kubectl) → API Server → Deployment object → Deployment Controller → ReplicaSet → Pods → Kubelet/container runtime → Node
