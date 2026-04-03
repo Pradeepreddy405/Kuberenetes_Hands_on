@@ -8,8 +8,9 @@
 
 
 ### Step 2: Apply the deployment
- - Command: kubectl apply -f deployment.yaml
-
+   ```
+        kubectl apply -f deployment.yaml
+   ```
  - What happens:
  - kubectl sends the Deployment manifest to the API Server.
  - API Server validates, parses, and stores it in etcd (the cluster’s key-value store).
