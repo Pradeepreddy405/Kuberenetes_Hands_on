@@ -37,26 +37,23 @@
 	Components involved: ReplicaSet Controller, API Server.
 
 ### Step 5: Scheduler assigns pods
-
-		- Newly created Pods are in Pending state.
-		- Scheduler picks an appropriate node based on:
-		- Resource availability
-		- Node selectors/affinities
-		- Kubelet on the node pulls the container image and starts the container.
+ - Newly created Pods are in Pending state.
+ - Scheduler picks an appropriate node based on:
+ - Resource availability
+ - Node selectors/affinities
+ - Kubelet on the node pulls the container image and starts the container.
 		
 	Components involved: Scheduler, Kubelet, container runtime (Docker/containerd).
 
 ### Step 6: Pod becomes Ready
-	
-		Kubernetes monitors pods via readiness/liveness probes (if defined).
-		Once all containers in the pod are running and ready → pod is marked Ready.
-	Components involved: Kubelet, API Server (updates pod status), optionally health probes.
+ - Kubernetes monitors pods via readiness/liveness probes (if defined).
+ - Once all containers in the pod are running and ready → pod is marked Ready.
+ - Components involved: Kubelet, API Server (updates pod status), optionally health probes.
 
 ### Step 7: Expose the Deployment
-
-		- You can expose pods via a Service:
-		- kubectl expose deployment nginx-deployment --type=NodePort --port=80
-		- Service provides a stable endpoint (ClusterIP/DNS/IP) that abstracts pod IPs.
+ - You can expose pods via a Service:
+ - kubectl expose deployment nginx-deployment --type=NodePort --port=80
+ - Service provides a stable endpoint (ClusterIP/DNS/IP) that abstracts pod IPs.
 		
 	Components involved: API Server (stores Service object), kube-proxy, networking layer.
 
