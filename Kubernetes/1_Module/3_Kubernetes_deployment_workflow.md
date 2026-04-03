@@ -19,22 +19,20 @@
 	Components involved: kubectl → API Server → etcd.
 
 ### Step 3: Deployment Controller takes over
-
-		- The Deployment Controller in Controller Manager watches the Deployment object in API Server.
-		- It compares desired replicas with current pods.
-		- It updates the ReplicaSet accordingly:
-		- If pods are missing → increase spec.replicas
-		- If too many pods → decrease spec.replicas
+ - The Deployment Controller in Controller Manager watches the Deployment object in API Server.
+ - It compares desired replicas with current pods.
+ - It updates the ReplicaSet accordingly:
+ - If pods are missing → increase spec.replicas
+ - If too many pods → decrease spec.replicas
 
 	Components involved: Deployment Controller, API Server, ReplicaSet object.
 
 ### Step 4: ReplicaSet creates Pods
-
-		- The ReplicaSet Controller (also in Controller Manager) sees changes in the ReplicaSet object.
-		- It ensures correct number of pods exist:
-		- Creates Pod objects via API Server if needed.
-		- Deletes excess pods if needed.
-		- Each Pod is created from the pod template specified in the Deployment.
+ - The ReplicaSet Controller (also in Controller Manager) sees changes in the ReplicaSet object.
+ - It ensures correct number of pods exist:
+ - Creates Pod objects via API Server if needed.
+ - Deletes excess pods if needed.
+ - Each Pod is created from the pod template specified in the Deployment.
 
 	Components involved: ReplicaSet Controller, API Server.
 
