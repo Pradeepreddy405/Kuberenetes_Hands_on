@@ -1,11 +1,12 @@
 ## Minikube + kubectl Setup 
 
 Step 1: Update system
+
 	sudo apt update -y						Ensures you install latest available versions
 
 Step 2: Install Docker (Minikube dependency)
 
-sudo apt install -y docker.io				Minikube (with Docker driver) runs Kubernetes inside a Docker container
+	sudo apt install -y docker.io				Minikube (with Docker driver) runs Kubernetes inside a Docker container
 	
 Step 3: Enable & start Docker
 
@@ -19,8 +20,7 @@ Step 4: Verify Docker
 
 	docker --version
 	docker ps
-
-Confirms Docker is installed and running
+	Confirms Docker is installed and running
 
 Step 5: Fix Docker permissions (IMPORTANT)
 
@@ -40,6 +40,7 @@ Step 6: Install Minikube
 	Places it in /usr/local/bin to acccess it globally accessible
 
 Step 7: Verify Minikube
+
 	minikube version
 
 Step 8: Install kubectl 
@@ -50,9 +51,11 @@ Step 8: Install kubectl
 	sudo mv kubectl /usr/local/bin/
 
 Step 9: Verify kubectl
+	
 	kubectl version --client
 
 Step 10: Start Minikube (IMPORTANT)
+	
 	minikube start --driver=docker --cpus=2 --memory=4096mb
 
 	--driver=docker		 	→ runs cluster in Docker
@@ -62,6 +65,7 @@ Step 10: Start Minikube (IMPORTANT)
 	This is optimal for your if you choose t2.large (2 CPU, 8GB RAM) --Out  of the instane resources it allocates to cluster 
 
 Step 11: Verify cluster
+	
 	kubectl get nodes
 
 
