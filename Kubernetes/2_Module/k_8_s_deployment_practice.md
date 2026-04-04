@@ -35,6 +35,9 @@ spec:
 Apply the deployment  :
 
 ```bash
+
+        kubectl create deployment myapp --image=nginx:latest --replicas=2       -----> Create deployment
+
         kubectl apply -f deployment.yaml               -----> updates the resources in the YAML file, making the cluster match the desired state.
 
         kubectl get deployments                        -----> lists all deployments in the current namespace, showing their name, number of replicas, ready replicas, and age.
