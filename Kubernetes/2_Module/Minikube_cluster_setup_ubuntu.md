@@ -2,7 +2,7 @@
 
 Step 1: Update system
 
-	sudo apt update -y						Ensures you install latest available versions
+	sudo apt update -y						Ensures you install latest available versions 
 
 Step 2: Install Docker (Minikube dependency)
 
