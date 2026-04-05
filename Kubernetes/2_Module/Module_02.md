@@ -1,8 +1,6 @@
 ## 1. Pods : A Pod is the smallest deployable unit in Kubernetes. It can contain one or more containers.
-	
-	YAML Example - Pod
-	
-	Create a file pod.yaml:
+- YAML Example - Pod
+- Create a file pod.yaml:
 	
 	```
 	apiVersion: v1
@@ -31,10 +29,8 @@
 	
 	
 ## 2. ReplicaSets : ReplicaSets ensure a specified number of Pod replicas are running at any time.
-	
-	YAML Example – ReplicaSet
-	
-	Create replicaset.yaml:
+- YAML Example – ReplicaSet
+- Create replicaset.yaml:
 	
 	```
 	apiVersion: apps/v1
@@ -64,10 +60,8 @@
 	
 	
 ## 3. Deployments : Deployments manage ReplicaSets and allow rolling updates.
-	
-	YAML Example – Deployment
-	
-	Create deployment.yaml:
+- YAML Example – Deployment
+- Create deployment.yaml:
 	
 	```
 	apiVersion: apps/v1
@@ -103,7 +97,6 @@
 	kubectl delete deployment my-deployment
 	
 ## 4. Namespaces : Namespaces help organize resources in a cluster.
-	
 	Commands
 	# List namespaces
 	kubectl get ns
