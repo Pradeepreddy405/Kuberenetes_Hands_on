@@ -38,6 +38,8 @@ Apply the deployment  :
 
         kubectl create deployment myapp --image=nginx:latest      -----> Create deployment through IMPERATIVE APPROACH
         
+        This is an imperative command because it directly creates the deployment without defining the desired state in a configuration file. In production, we prefer declarative approaches using YAML and kubectl apply
+        
 
         kubectl apply -f deployment.yaml               -----> updates the resources in the YAML file, making the cluster match the desired state.
 
