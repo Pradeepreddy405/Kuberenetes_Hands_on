@@ -4,7 +4,7 @@ This guide covers **creating, editing, scaling, and deleting Kubernetes Deployme
 
 ---
 
-## 1. Create a Deployment
+## 1. Create a Deployment - Imperative vs Declarative
 
 Create a file called `deployment.yaml`:
 
