@@ -1,8 +1,7 @@
 # 	Kubernetes Hands-On Project: Mini Web App Deployment
+	This project guides you to deploy a small web application using Pods, ReplicaSets, Deployments, Namespaces, and Labels in Kubernetes. You’ll also practice scaling, rolling updates, and filtering resources.
 	
-## 	This project guides you to deploy a small web application using Pods, ReplicaSets, Deployments, Namespaces, and Labels in Kubernetes. You’ll also practice scaling, rolling updates, and filtering resources.
-	
-	Project Overview
+## Project Overview
 	
 	We will:
 	- Deploy a single Pod running Nginx.
@@ -14,13 +13,14 @@
 ---
 
 ## 	Step 1: Setup Namespace
-	Create a namespace for this project:
+Create a namespace for this project:
+
 	- kubectl create namespace demo-app
 	- kubectl get ns
 	
 	
 ## 	Step 2: Deploy a Single Pod
-	Create a file pod.yaml:
+Create a file pod.yaml:
 	
 	```
 		apiVersion: v1
@@ -49,8 +49,7 @@
 		kubectl delete pod nginx-pod -n demo-app
 
 ## Step 3: Deploy a ReplicaSet
-	
-	Create a file replicaset.yaml:
+Create a file replicaset.yaml:
 	
 	```
 		apiVersion: apps/v1
@@ -81,8 +80,8 @@
 		kubectl delete rs nginx-rs -n demo-app
 	
 ##	Step 4: Deploy a Deployment
-	
-	Create a file deployment.yaml:
+Create a file deployment.yaml:
+
 	```
 		apiVersion: apps/v1
 		kind: Deployment
