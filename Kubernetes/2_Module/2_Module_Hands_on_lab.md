@@ -2,13 +2,13 @@
    - This project guides you to deploy a small web application using Pods, ReplicaSets, Deployments, Namespaces, and Labels in Kubernetes. You’ll also practice scaling, rolling updates, and filtering resources.
 	
 ## Project Overview
-	
-	We will:
-	- Deploy a single Pod running Nginx.
-	- Deploy a ReplicaSet to ensure multiple pods run for high availability.
-	- Deploy a Deployment to manage ReplicaSets with rolling updates.
-	- Use Namespaces to isolate environments.
-	- Use Labels & Selectors to organize and manage resources.
+- We will:
+
+		- Deploy a single Pod running Nginx.
+		- Deploy a ReplicaSet to ensure multiple pods run for high availability.
+		- Deploy a Deployment to manage ReplicaSets with rolling updates.
+		- Use Namespaces to isolate environments.
+		- Use Labels & Selectors to organize and manage resources.
 
 ---
 
