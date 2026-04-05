@@ -53,10 +53,11 @@
 			image: nginx:latest
 	```
 	Commands
-	# kubectl apply -f replicaset.yaml
-	# kubectl get rs
-	# kubectl get pods
-	# kubectl delete rs my-rs
+
+		# kubectl apply -f replicaset.yaml
+		# kubectl get rs
+		# kubectl get pods
+		# kubectl delete rs my-rs
 	
 	
 	
@@ -84,44 +85,46 @@
 			image: nginx:latest
 	```
 	Commands
-	# Create deployment
-	kubectl apply -f deployment.yaml
+
+		# Create deployment
+		kubectl apply -f deployment.yaml
 	
-	# Check deployment
-	kubectl get deployments
-	kubectl describe deployment my-deployment
+		# Check deployment
+		kubectl get deployments
+		kubectl describe deployment my-deployment
 	
-	# Scale replicas
-	kubectl scale deployment my-deployment --replicas=4
+		# Scale replicas
+		kubectl scale deployment my-deployment --replicas=4
 	
-	# Delete deployment
-	kubectl delete deployment my-deployment
+		# Delete deployment
+		kubectl delete deployment my-deployment
 	
 ## 4. Namespaces : Namespaces help organize resources in a cluster.
-	Commands
-	# List namespaces
-	kubectl get ns
+- Commands
+
+		# List namespaces
+		kubectl get ns
 	
-	# Create namespace
-	kubectl create namespace dev
+		# Create namespace
+		kubectl create namespace dev
 	
-	# Apply resources to a namespace
-	kubectl apply -f deployment.yaml -n dev
+		# Apply resources to a namespace
+		kubectl apply -f deployment.yaml -n dev
 	
-	# Delete namespace
-	kubectl delete namespace dev
+		# Delete namespace
+		kubectl delete namespace dev
 	
 ## 5. Labels & Selectors : Labels are key-value pairs attached to objects. Selectors filter objects based on labels.
+- Commands
+
+		# List pods with labels
+		kubectl get pods --show-labels
 	
-	Commands
-	# List pods with labels
-	kubectl get pods --show-labels
+		# Get pods using label selector
+		kubectl get pods -l app=demo
 	
-	# Get pods using label selector
-	kubectl get pods -l app=demo
-	
-	# Delete pods using label selector
-	kubectl delete pods -l app=demo
+		# Delete pods using label selector
+		kubectl delete pods -l app=demo
 	
 	
 ## 6. Hands-on Flow
