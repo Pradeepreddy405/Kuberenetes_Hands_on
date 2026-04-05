@@ -18,14 +18,15 @@
 		
 	```
 	Commands
-	# Apply the Pod
-	kubectl apply -f pod.yaml
+
+  		# Apply the Pod
+		kubectl apply -f pod.yaml
 	
-	# Check Pod status
-	kubectl get pods
+		# Check Pod status
+		kubectl get pods
 	
-	# Delete Pod
-	kubectl delete pod my-first-pod
+		# Delete Pod
+		kubectl delete pod my-first-pod
 	
 	
 ## 2. ReplicaSets : ReplicaSets ensure a specified number of Pod replicas are running at any time.
