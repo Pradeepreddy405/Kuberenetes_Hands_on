@@ -109,11 +109,28 @@ This removes the deployment and all its pods.
 
 ---
 
-## 4. Bonus Commands
+## 4. Basic commands
 
 ```bash
-# Check deployment details
+# List all deployments
+kubectl get deployments
+
+# List all pods
+kubectl get pods
+
+# List all ReplicaSets
+kubectl get rs
+
+==============================================================
+
+# Get detailed information about a deployment
 kubectl describe deployment myapp-deployment
+
+# Get pods with their labels (useful for selectors)
+kubectl get pods --show-labels
+
+# Check deployment rollout status
+kubectl rollout status deployment/myapp-deployment
 
 # Scale deployment without editing YAML
 kubectl scale deployment myapp-deployment --replicas=4
@@ -121,7 +138,39 @@ kubectl scale deployment myapp-deployment --replicas=4
 # Rollback deployment to previous version
 kubectl rollout undo deployment/myapp-deployment
 
-# Check rollout status
-kubectl rollout status deployment/myapp-deployment
+# Check deployment rollout history
+kubectl rollout history deployment/myapp-deployment
+
+==============================================================
+
+# Delete a deployment (also removes pods & ReplicaSets)
+kubectl delete deployment myapp-deployment
+
+# Delete using YAML
+kubectl delete -f deployment.yaml
+
+# Delete a specific pod
+kubectl delete pod myapp-deployment-xxxxxxx
+
+# Delete a specific ReplicaSet
+kubectl delete rs myapp-deployment-xxxxxxx
+
+==============================================================
+
+# Watch resources in real-time
+kubectl get pods -w
+kubectl get deployments -w
+kubectl get rs -w
+
+==============================================================
+
+# Imperative deployment creation
+kubectl create deployment myapp --image=nginx:latest
+
+# Apply a declarative deployment from YAML
+kubectl apply -f deployment.yaml
+
+# Edit deployment live
+kubectl edit deployment myapp-deployment
 ```
 
