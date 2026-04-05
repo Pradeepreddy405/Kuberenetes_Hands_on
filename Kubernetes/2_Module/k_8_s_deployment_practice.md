@@ -36,7 +36,8 @@ Apply the deployment  :
 
 ```bash
 
-        kubectl create deployment myapp --image=nginx:latest --replicas=2       -----> Create deployment
+        kubectl create deployment myapp --image=nginx:latest      -----> Create deployment through IMPERATIVE APPROACH
+        
 
         kubectl apply -f deployment.yaml               -----> updates the resources in the YAML file, making the cluster match the desired state.
 
