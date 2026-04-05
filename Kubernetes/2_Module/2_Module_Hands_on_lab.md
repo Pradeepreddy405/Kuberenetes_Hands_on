@@ -1,5 +1,5 @@
 # 	Kubernetes Hands-On Project: Mini Web App Deployment
-	This project guides you to deploy a small web application using Pods, ReplicaSets, Deployments, Namespaces, and Labels in Kubernetes. You’ll also practice scaling, rolling updates, and filtering resources.
+   - This project guides you to deploy a small web application using Pods, ReplicaSets, Deployments, Namespaces, and Labels in Kubernetes. You’ll also practice scaling, rolling updates, and filtering resources.
 	
 ## Project Overview
 	
