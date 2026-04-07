@@ -1,0 +1,138 @@
+apiVersion: kops.k8s.io/v1alpha2
+kind: Cluster
+metadata:
+  name: pradeeprdevops.xyz
+spec:
+  api:
+    dns: {}
+  authorization:
+    rbac: {}
+  channel: stable
+  cloudProvider: aws
+  configBase: s3://pradeeprdevops.xy/pradeeprdevops.xyz
+  dnsZone: pradeeprdevops.xyz
+
+  etcdClusters:
+    - name: main
+      cpuRequest: 200m
+      memoryRequest: 100Mi
+      manager:
+        backupRetentionDays: 90
+      etcdMembers:
+        - name: a
+          instanceGroup: control-plane-ap-south-1a
+          encryptedVolume: true
+
+    - name: events
+      cpuRequest: 100m
+      memoryRequest: 100Mi
+      manager:
+        backupRetentionDays: 90
+      etcdMembers:
+        - name: a
+          instanceGroup: control-plane-ap-south-1a
+          encryptedVolume: true
+
+  iam:
+    allowContainerRegistry: true
+    legacy: false
+
+  kubeProxy:
+    enabled: false
+
+  kubelet:
+    anonymousAuth: false
+
+  kubernetesApiAccess:
+    - 0.0.0.0/0
+    - ::/0
+
+  kubernetesVersion: 1.35.3
+  masterPublicName: api.pradeeprdevops.xyz
+  networkCIDR: 172.20.0.0/16
+
+  networking:
+    cilium:
+      enableNodePort: true
+
+  nonMasqueradeCIDR: 100.64.0.0/10
+
+  sshAccess:
+    - 0.0.0.0/0
+    - ::/0
+
+  subnets:
+    - name: ap-south-1a
+      cidr: 172.20.0.0/17
+      type: Public
+      zone: ap-south-1a
+
+    - name: ap-south-1b
+      cidr: 172.20.128.0/17
+      type: Public
+      zone: ap-south-1b
+
+  topology:
+    dns:
+      type: Public
+
+---
+apiVersion: kops.k8s.io/v1alpha2
+kind: InstanceGroup
+metadata:
+  name: control-plane-ap-south-1a
+  labels:
+    kops.k8s.io/cluster: pradeeprdevops.xyz
+spec:
+  role: Master
+  machineType: t3.medium
+  image: 099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server-20260218
+  minSize: 1
+  maxSize: 1
+  rootVolumeSize: 10
+  subnets:
+    - ap-south-1a
+
+---
+apiVersion: kops.k8s.io/v1alpha2
+kind: InstanceGroup
+metadata:
+  name: nodes-ap-south-1a
+  labels:
+    kops.k8s.io/cluster: pradeeprdevops.xyz
+spec:
+  role: Node
+  machineType: t3.medium
+  image: 099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server-20260218
+  minSize: 1
+  maxSize: 1
+  rootVolumeSize: 10
+  subnets:
+    - ap-south-1a
+
+---
+apiVersion: kops.k8s.io/v1alpha2
+kind: InstanceGroup
+metadata:
+  name: nodes-ap-south-1b
+  labels:
+    kops.k8s.io/cluster: pradeeprdevops.xyz
+spec:
+  role: Node
+  machineType: t3.medium
+  image: 099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server-20260218
+  minSize: 1
+  maxSize: 1
+  rootVolumeSize: 10
+  subnets:
+    - ap-south-1b
+
+---
+apiVersion: kops.k8s.io/v1alpha2
+kind: SSHCredential
+metadata:
+  name: admin
+  labels:
+    kops.k8s.io/cluster: pradeeprdevops.xyz
+spec:
+  publicKey: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF2laQ8Y6mu2EpA5iv/8zZ4nXQYwk2Bx12bdH+Tv9NKc root@ip-172-31-13-43
