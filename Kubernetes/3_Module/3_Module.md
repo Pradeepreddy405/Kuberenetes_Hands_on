@@ -57,7 +57,7 @@ Pods are the smallest deployable units in Kubernetes. Applications built using m
 
 ### a) IP-based Communication
 Each Pod gets a unique IP address.
-Kubernetes enforces a **flat network model**, meaning:
+Kubernetes enforces a **flat network model**, means:
 - Every Pod can communicate with every other Pod
 - No NAT is required between Pods
 
