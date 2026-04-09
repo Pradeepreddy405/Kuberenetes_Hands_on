@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-demo-cip
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-demo-cip
+  template:
+    metadata:
+      labels:
+        app: nginx-demo-cip   
+    spec:
+      containers:
+      - name: my-container
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-demo-cip
+spec:
+  type: ClusterIP
+  ports:
+  - port: 80
+    targetPort: 80
+  selector:
+    app: nginx-demo-cip   # matches pods
