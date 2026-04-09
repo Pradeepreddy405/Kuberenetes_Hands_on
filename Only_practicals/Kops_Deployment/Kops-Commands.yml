@@ -32,11 +32,11 @@ kops create cluster --name=pradeeprdevops.xyz \
 
 # 6 Node cluster 
 
-# kops create cluster --name=cloudvishwakarma.in \
-# --state=s3://cloudvishwakarma.in --zones=us-east-1a,us-east-1b,us-east-1c \
+# kops create cluster --name=pradeeprdevops.xyz \
+# --state=s3://pradeeprdevops.xy --zones=us-east-1a,us-east-1b,us-east-1c \
 # --node-count=3 --master-count=3 --node-size=t3.medium --master-size=t3.medium \
 # --master-zones=us-east-1a,us-east-1b,us-east-1c --master-volume-size 10 --node-volume-size 10 \
-# --ssh-public-key ~/.ssh/id_rsa.pub \
+# --ssh-public-key ~/.ssh/id_ed25519.pub \
 # --dns-zone=cloudvishwakarma.in --dry-run --output yaml
 
 
